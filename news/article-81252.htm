@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayios.github.io/news/article-81252.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Surfboard 与 V2Ray 的配置详解：稳定安全的科学上网方案</title>
+        <meta name="description" content="在当今网络环境中，许多用户需要绕过防火墙以访问被屏蔽的网站和服务。Surfboard 和 V2Ray 作为当前流行的工具，它们的组合不仅能够提供高速稳定的连接，还能提升数据传输的安全性。本文将详细讲解" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray IOS 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayios.github.io/news/article-81252.htm" />
+    <meta property="og:site_name" content="V2ray IOS 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="Surfboard 与 V2Ray 的配置详解：稳定安全的科学上网方案" />
+    <meta property="og:image" content="https://v2rayios.github.io/uploads/20240728-1/2791e136ba09547fa027b06a19b83ee0.webp" />
+        <meta property="og:release_date" content="2025-03-25T08:19:50" />
+    <meta property="og:updated_time" content="2025-03-25T08:19:50" />
+        <meta property="og:description" content="在当今网络环境中，许多用户需要绕过防火墙以访问被屏蔽的网站和服务。Surfboard 和 V2Ray 作为当前流行的工具，它们的组合不仅能够提供高速稳定的连接，还能提升数据传输的安全性。本文将详细讲解" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Surfboard 与 V2Ray 的配置详解：稳定安全的科学上网方案">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TCC4Y87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TCC4Y87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>V2ray IOS</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>Surfboard 与 V2Ray 的配置详解：稳定安全的科学上网方案</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                
+<p data-start="41" data-end="193" class="">在当今网络环境中，许多用户需要绕过防火墙以访问被屏蔽的网站和服务。Surfboard 和 V2Ray 作为当前流行的工具，它们的组合不仅能够提供高速稳定的连接，还能提升数据传输的安全性。本文将详细讲解如何配置 Surfboard 以使用 V2Ray，并解答常见问题，帮助你顺利搭建高效的网络代理环境。</p>
+<h2 data-start="195" data-end="223" class="">一、什么是 Surfboard 与 V2Ray</h2>
+<h3 data-start="225" data-end="246" class="">1. Surfboard 简介</h3>
+<p data-start="248" data-end="347" class="">Surfboard 是一款基于开源技术的代理工具，界面简洁易用，适合普通用户和进阶用户。其核心功能在于提供灵活的网络代理设置，支持多种协议，并允许用户自由配置规则，从而实现安全、快速的上网体验。</p>
+<h3 data-start="349" data-end="366" class="">2. V2Ray 简介</h3>
+<p data-start="368" data-end="524" class="">V2Ray 是一款功能强大的代理工具，属于 Project V 项目的一部分，支持多种网络协议（如 VMess、VLESS、Shadowsocks 等），具备强大的数据加密和流量混淆功能。相比于传统的 VPN 或 Shadowsocks，V2Ray 具备更好的隐匿性和灵活性，使其成为突破网络封锁的理想选择。</p>
+<h2 data-start="526" data-end="558" class="">二、为何选择 Surfboard 与 V2Ray 组合</h2>
+<p data-start="560" data-end="609" class="">Surfboard 与 V2Ray 的组合能够提供卓越的网络访问体验，主要体现在以下几个方面：</p>
+<ul data-start="611" data-end="833">
+<li data-start="611" data-end="668" class="" style="">
+<p data-start="613" data-end="668" class=""><strong data-start="613" data-end="620">高速性</strong>：V2Ray 通过多种协议优化数据传输，能够提供更快的网络访问速度，减少延迟，提高浏览体验。</p>
+</li>
+<li data-start="669" data-end="712" class="" style="">
+<p data-start="671" data-end="712" class=""><strong data-start="671" data-end="678">稳定性</strong>：多节点冗余机制，即使部分节点失效，也不会影响整体连接的稳定性。</p>
+</li>
+<li data-start="713" data-end="772" class="" style="">
+<p data-start="715" data-end="772" class=""><strong data-start="715" data-end="722">安全性</strong>：V2Ray 采用加密技术，对数据进行混淆处理，极大地提升了信息安全性，避免用户数据被恶意监控。</p>
+</li>
+<li data-start="773" data-end="833" class="" style="">
+<p data-start="775" data-end="833" class=""><strong data-start="775" data-end="782">灵活性</strong>：Surfboard 允许用户自定义代理规则，如按应用、按网站或按 IP 进行分流，满足不同需求。</p>
+</li>
+</ul>
+<h2 data-start="835" data-end="862" class="">三、Surfboard V2Ray 配置步骤</h2>
+<p data-start="864" data-end="904" class="">要成功使用 Surfboard 配置 V2Ray，需要按照以下步骤进行设置。</p>
+<h3 data-start="906" data-end="920" class="">1. 下载与安装</h3>
+<p data-start="922" data-end="964" class="">在进行任何配置之前，确保你已经下载并安装了 Surfboard 和 V2Ray。</p>
+<ul data-start="966" data-end="1166">
+<li data-start="966" data-end="1041" class="" style="">
+<p data-start="968" data-end="1041" class=""><strong data-start="968" data-end="984">下载 Surfboard</strong>：可以在官网或 GitHub 主页找到适用于 Android、iOS、Windows 和 macOS 的版本。</p>
+</li>
+<li data-start="1042" data-end="1166" class="" style="">
+<p data-start="1044" data-end="1166" class=""><strong data-start="1044" data-end="1056">下载 V2Ray</strong>：V2Ray 同样可以在 GitHub 或官方渠道获取。Windows 用户可以选择 V2RayN，macOS 用户可以选择 V2RayU，移动端可使用 v2rayNG（安卓）或 Shadowrocket（iOS）。</p>
+</li>
+</ul>
+<p data-start="1168" data-end="1197" class="">安装过程通常非常简单，按照官方提供的指南进行安装即可。</p>
+<h3 data-start="1199" data-end="1221" class="">2. 获取 V2Ray 配置文件</h3>
+<p data-start="1223" data-end="1319" class="">要成功连接 V2Ray，首先需要一个有效的服务器配置文件。这个文件通常由 V2Ray 服务器提供商提供，或者用户可以自行搭建 V2Ray 服务器。常见的 V2Ray 配置文件包含以下内容：</p>
+<ul data-start="1321" data-end="1474">
+<li data-start="1321" data-end="1342" class="" style="">
+<p data-start="1323" data-end="1342" class=""><strong data-start="1323" data-end="1332">服务器地址</strong>（IP 或域名）</p>
+</li>
+<li data-start="1343" data-end="1371" class="" style="">
+<p data-start="1345" data-end="1371" class=""><strong data-start="1345" data-end="1352">端口号</strong>（一般为 443、10086 等）</p>
+</li>
+<li data-start="1372" data-end="1391" class="" style="">
+<p data-start="1374" data-end="1391" class=""><strong data-start="1374" data-end="1389">用户 ID（UUID）</strong></p>
+</li>
+<li data-start="1392" data-end="1419" class="" style="">
+<p data-start="1394" data-end="1419" class=""><strong data-start="1394" data-end="1402">传输协议</strong>（如 WS、gRPC、TCP）</p>
+</li>
+<li data-start="1420" data-end="1447" class="" style="">
+<p data-start="1422" data-end="1447" class=""><strong data-start="1422" data-end="1430">加密方式</strong>（如 aes-256-gcm）</p>
+</li>
+<li data-start="1448" data-end="1474" class="" style="">
+<p data-start="1450" data-end="1474" class=""><strong data-start="1450" data-end="1461">额外的安全设置</strong>（TLS、伪装域名等）</p>
+</li>
+</ul>
+<p data-start="1476" data-end="1522" class="">如果你没有 V2Ray 服务器，可以选择购买 V2Ray 订阅服务，获取相应的配置文件。</p>
+<h3 data-start="1524" data-end="1545" class="">3. 配置 Surfboard</h3>
+<h4 data-start="1547" data-end="1583" class="">3.1 启动 Surfboard 并导入 V2Ray 配置</h4>
+<p data-start="1585" data-end="1686" class="">打开 Surfboard，进入设置界面，选择 <strong data-start="1608" data-end="1622">V2Ray 配置选项</strong>，然后输入或导入你的 V2Ray 配置文件。大多数情况下，你可以使用 JSON 配置文件或者 V2Ray 订阅链接进行导入。</p>
+<h4 data-start="1688" data-end="1708" class="">3.2 选择合适的加密方式</h4>
+<p data-start="1710" data-end="1793" class="">根据 V2Ray 配置文件的内容，选择正确的 <strong data-start="1733" data-end="1741">加密方式</strong>（如 aes-256-gcm）。如果使用 VMess + TLS，请确保勾选 <strong data-start="1780" data-end="1790">TLS 选项</strong>。</p>
+<h4 data-start="1795" data-end="1812" class="">3.3 代理模式选择</h4>
+<p data-start="1814" data-end="1837" class="">Surfboard 提供以下几种代理模式：</p>
+<ul data-start="1839" data-end="1963">
+<li data-start="1839" data-end="1876" class="" style="">
+<p data-start="1841" data-end="1876" class=""><strong data-start="1841" data-end="1849">全局模式</strong>：所有网络流量都通过代理，适合需要全局代理的场景。</p>
+</li>
+<li data-start="1877" data-end="1922" class="" style="">
+<p data-start="1879" data-end="1922" class=""><strong data-start="1879" data-end="1887">智能模式</strong>：仅代理被屏蔽的网站，适合需要访问国际网站但不影响本地服务的用户。</p>
+</li>
+<li data-start="1923" data-end="1963" class="" style="">
+<p data-start="1925" data-end="1963" class=""><strong data-start="1925" data-end="1933">手动模式</strong>：用户自定义代理规则，可以按 IP、域名或应用进行分流。</p>
+</li>
+</ul>
+<p data-start="1965" data-end="1989" class="">根据你的需求选择合适的代理模式，并保存配置。</p>
+<h3 data-start="1991" data-end="2004" class="">4. 测试连接</h3>
+<p data-start="2006" data-end="2099" class="">配置完成后，重启 Surfboard 并进行测试。你可以尝试访问 Google、YouTube 或其他被屏蔽的网站，检查是否能够正常连接。如果无法连接，请参考下文的常见问题排查方法。</p>
+<h2 data-start="2101" data-end="2117" class="">四、常见问题与解决方案</h2>
+<h3 data-start="2119" data-end="2153" class="">1. Surfboard 和 V2Ray 需要什么权限？</h3>
+<p data-start="2155" data-end="2256" class="">要使 Surfboard 正常运行，用户需要赋予它相应的 <strong data-start="2184" data-end="2194">网络访问权限</strong> 和 <strong data-start="2197" data-end="2207">VPN 权限</strong>（移动端）。对于 Windows 和 macOS 版本，可能需要管理员权限来修改系统代理设置。</p>
+<h3 data-start="2258" data-end="2283" class="">2. 如何确保 V2Ray 连接安全？</h3>
+<ul data-start="2285" data-end="2413">
+<li data-start="2285" data-end="2327" class="" style="">
+<p data-start="2287" data-end="2327" class="">使用<strong data-start="2289" data-end="2297">官方渠道</strong>或可信服务商提供的 V2Ray 配置，避免泄露个人数据。</p>
+</li>
+<li data-start="2328" data-end="2370" class="" style="">
+<p data-start="2330" data-end="2370" class="">选择<strong data-start="2332" data-end="2343">安全的加密方式</strong>（如 AES-256-GCM），确保数据传输安全。</p>
+</li>
+<li data-start="2371" data-end="2413" class="" style="">
+<p data-start="2373" data-end="2413" class="">避免使用<strong data-start="2377" data-end="2386">免费服务器</strong>，因为这些服务器通常不可靠，可能存在数据安全隐患。</p>
+</li>
+</ul>
+<h3 data-start="2415" data-end="2449" class="">3. Surfboard 无法连接 V2Ray，怎么办？</h3>
+<ul data-start="2451" data-end="2647">
+<li data-start="2451" data-end="2508" class="" style="">
+<p data-start="2453" data-end="2508" class=""><strong data-start="2453" data-end="2473">检查 V2Ray 服务器是否在线</strong>，可以尝试使用 ping 或 telnet 命令测试服务器可用性。</p>
+</li>
+<li data-start="2509" data-end="2545" class="" style="">
+<p data-start="2511" data-end="2545" class=""><strong data-start="2511" data-end="2529">确认服务器地址和端口填写正确</strong>，避免输入错误导致连接失败。</p>
+</li>
+<li data-start="2546" data-end="2603" class="" style="">
+<p data-start="2548" data-end="2603" class=""><strong data-start="2548" data-end="2560">尝试更换传输协议</strong>，有时某些网络环境会屏蔽特定协议（如 WS），可以尝试使用 gRPC 或 TCP。</p>
+</li>
+<li data-start="2604" data-end="2647" class="" style="">
+<p data-start="2606" data-end="2647" class=""><strong data-start="2606" data-end="2628">重启 Surfboard 并清理缓存</strong>，有时旧的配置缓存可能会影响连接。</p>
+</li>
+</ul>
+<h2 data-start="2649" data-end="2656" class="">结语</h2>
+<p data-start="2658" data-end="2772" class="">通过本文的详细介绍，相信你已经掌握了 Surfboard 与 V2Ray 的基本配置方法，并能有效解决常见问题。Surfboard 作为一款强大的代理工具，结合 V2Ray 的灵活性，能够为用户提供更稳定、更安全的上网体验。</p>
+<p data-start="2774" data-end="2863" class="">如果你在配置过程中遇到任何问题，可以参考官方文档或加入相关技术社区进行讨论。希望这篇文章能够帮助你顺利配置 Surfboard 和 V2Ray，让你的网络访问更加自由、高效！</p>
+<hr data-start="2865" data-end="2868" class="" style="">
+<h3 data-start="2870" data-end="2878" class="">点评</h3>
+<p data-start="2880" data-end="3033" class="">这篇文章不仅涵盖了 Surfboard 与 V2Ray 的基础知识，还提供了详细的配置步骤和故障排查方法，具有很强的实用性。文章逻辑清晰，层次分明，既适合新手快速入门，也能为进阶用户提供深入指导。此外，语言流畅，表达准确，能够清晰传达关键信息，适合作为 Surfboard + V2Ray 配置的入门指南。</p>                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80767.htm">K2P B1 路由器 + 梅林固件 + V2Ray：科学上网最全配置指南</a></p>
+                                        <p>下一个：<a href="/news/article-81254.htm">全面解析最新Clash机场：配置、使用与安全指南</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-80068.htm" title="如何使用梅林科学上网68实现网络自由：完整指南与实用技巧">如何使用梅林科学上网68实现网络自由：完整指南与实用技巧</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-v2ray.htm" title="V2ray IOS | 3月23日18.2M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点地址">V2ray IOS | 3月23日18.2M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe.htm" title="V2ray IOS | 3月25日19.9M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享">V2ray IOS | 3月25日19.9M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-80767.htm" title="K2P B1 路由器 + 梅林固件 + V2Ray：科学上网最全配置指南">K2P B1 路由器 + 梅林固件 + V2Ray：科学上网最全配置指南</a></li>
+                        <li class="py-2"><a href="/news/article-80067.htm" title="Shadowrocket断开问题全解析：原因、解决方案与优化指南">Shadowrocket断开问题全解析：原因、解决方案与优化指南</a></li>
+                        <li class="py-2"><a href="/news/article-81254.htm" title="全面解析最新Clash机场：配置、使用与安全指南">全面解析最新Clash机场：配置、使用与安全指南</a></li>
+                        <li class="py-2"><a href="/news/article-81912.htm" title="科学上网节点加速器全解析：原理、选择与优化指南">科学上网节点加速器全解析：原理、选择与优化指南</a></li>
+                        <li class="py-2"><a href="/news/article-81252.htm" title="Surfboard 与 V2Ray 的配置详解：稳定安全的科学上网方案">Surfboard 与 V2Ray 的配置详解：稳定安全的科学上网方案</a></li>
+                        <li class="py-2"><a href="/news/article-80766.htm" title="全面解析单机游戏 Clash：玩法与策略指南">全面解析单机游戏 Clash：玩法与策略指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-v2ray.htm" title="V2ray IOS | 3月24日22.6M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点分享">V2ray IOS | 3月24日22.6M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                V2ray IOS 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
