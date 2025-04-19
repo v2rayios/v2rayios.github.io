@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayios.github.io/news/article-98656.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>解决Shadowrocket无法连接问题：详细的故障排查与修复指南</title>
+        <meta name="description" content="在如今的数字时代，网络隐私和访问自由成为了越来越多人关注的焦点。随着互联网审查的普遍存在，越来越多的人开始使用代理工具来保护个人隐私和突破地理限制。Shadowrocket，作为一款非常受欢迎的iOS" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray IOS 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayios.github.io/news/article-98656.htm" />
+    <meta property="og:site_name" content="V2ray IOS 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="解决Shadowrocket无法连接问题：详细的故障排查与修复指南" />
+    <meta property="og:image" content="https://v2rayios.github.io/uploads/20240728-1/ca1d8ca1db9e20e2449ae58d9c86baae.webp" />
+        <meta property="og:release_date" content="2025-04-18T09:40:19" />
+    <meta property="og:updated_time" content="2025-04-18T09:40:19" />
+        <meta property="og:description" content="在如今的数字时代，网络隐私和访问自由成为了越来越多人关注的焦点。随着互联网审查的普遍存在，越来越多的人开始使用代理工具来保护个人隐私和突破地理限制。Shadowrocket，作为一款非常受欢迎的iOS" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="解决Shadowrocket无法连接问题：详细的故障排查与修复指南">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TCC4Y87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TCC4Y87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>V2ray IOS</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>解决Shadowrocket无法连接问题：详细的故障排查与修复指南</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                
+<p data-start="41" data-end="217" class="">在如今的数字时代，网络隐私和访问自由成为了越来越多人关注的焦点。随着互联网审查的普遍存在，越来越多的人开始使用代理工具来保护个人隐私和突破地理限制。Shadowrocket，作为一款非常受欢迎的iOS代理工具，因其强大的功能和稳定的表现，成为了很多用户的首选。无论是用来访问被封锁的网站，还是保护在线隐私，Shadowrocket都能够提供强大的支持。</p>
+<p data-start="219" data-end="378" class="">然而，尽管Shadowrocket的表现一贯良好，部分用户在使用过程中仍然会遇到“打不开连接”的问题，导致无法顺利访问互联网。这类问题可能由多种原因引起，例如服务器故障、配置错误或网络设置不当等。在本篇文章中，我们将详细解析这些问题的原因，并提供一系列解决方案，帮助用户顺利解决Shadowrocket无法连接的问题。</p>
+<h2 data-start="380" data-end="403" class=""><strong data-start="383" data-end="403">什么是Shadowrocket？</strong></h2>
+<p data-start="405" data-end="575" class="">Shadowrocket是一款功能强大的iOS代理工具，能够帮助用户绕过地理限制、保护隐私并实现科学上网。它支持多种协议，包括Vmess、Shadowsocks、VLESS等，且提供了灵活的配置选项，使得用户可以自定义代理设置。Shadowrocket广泛应用于iPhone和iPad等iOS设备，通过VPN或代理服务器提供安全的网络访问。</p>
+<p data-start="577" data-end="685" class="">尽管这款应用非常强大，但有时候用户可能会遇到无法连接的问题。这种问题可能源自多个因素，例如配置错误、网络连接问题或者防火墙阻挡等。了解这些常见的原因以及如何解决它们，将帮助用户更加高效地使用Shadowrocket。</p>
+<h2 data-start="687" data-end="715" class=""><strong data-start="690" data-end="715">Shadowrocket无法连接的常见原因</strong></h2>
+<p data-start="717" data-end="783" class="">在排查Shadowrocket无法连接的问题时，了解潜在的原因至关重要。以下是导致Shadowrocket打不开连接的几个主要原因：</p>
+<h3 data-start="785" data-end="808" class=""><strong data-start="789" data-end="808">1. 服务器故障或未能正常运行</strong></h3>
+<p data-start="810" data-end="928" class="">Shadowrocket依赖于所配置的代理服务器来建立连接。如果所选的VPN服务器出现故障，或者服务器没有正确运行，连接就会失败。由于大部分VPN服务商的服务器经常进行维护或更新，因此用户在使用过程中，可能会遇到服务器暂时不可用的情况。</p>
+<h3 data-start="930" data-end="948" class=""><strong data-start="934" data-end="948">2. 错误的网络设置</strong></h3>
+<p data-start="950" data-end="1046" class="">当你的设备无法获取正确的IP地址或遇到其他网络配置问题时，Shadowrocket也可能无法成功连接。网络设置错误可能是由于Wi-Fi连接不稳定、DNS设置问题或者数据流量未开启等原因引起的。</p>
+<h3 data-start="1048" data-end="1071" class=""><strong data-start="1052" data-end="1071">3. 防火墙或安全软件阻止连接</strong></h3>
+<p data-start="1073" data-end="1186" class="">一些用户设备上可能安装了防火墙或者其他安全软件，这些软件可能会阻止Shadowrocket的网络访问，导致无法成功建立连接。这种情况下，禁用防火墙或安全软件，或手动设置规则来允许Shadowrocket通信，往往能够解决问题。</p>
+<h3 data-start="1188" data-end="1205" class=""><strong data-start="1192" data-end="1205">4. 配置文件错误</strong></h3>
+<p data-start="1207" data-end="1296" class="">配置文件是Shadowrocket正常运行的基础，如果配置文件有误，连接就无法正常建立。常见的配置错误包括代理协议设置不当、服务器地址错误或者UUID（用户唯一标识符）不正确等。</p>
+<h2 data-start="1298" data-end="1329" class=""><strong data-start="1301" data-end="1329">如何解决Shadowrocket无法连接的问题？</strong></h2>
+<p data-start="1331" data-end="1369" class="">针对上述常见的连接问题，本文提供了一些解决方案，帮助用户恢复正常的网络连接。</p>
+<h3 data-start="1371" data-end="1392" class=""><strong data-start="1375" data-end="1392">1. 检查VPN服务器状态</strong></h3>
+<p data-start="1394" data-end="1488" class="">首先，确保你所连接的VPN服务器在正常运行状态。有时候，服务器可能会由于维护、故障或其他原因导致连接失败。为了确保服务器的可用性，用户可以检查VPN服务商的官方网站，了解服务器的状态更新。</p>
+<p data-start="1490" data-end="1495" class="">解决方法：</p>
+<ul data-start="1496" data-end="1551">
+<li data-start="1496" data-end="1519" class="" style="">
+<p data-start="1498" data-end="1519" class="">尝试更换服务器地址，选择其他可用的服务器。</p>
+</li>
+<li data-start="1520" data-end="1551" class="" style="">
+<p data-start="1522" data-end="1551" class="">如果VPN服务商提供了多个服务器节点，试试不同的节点连接。</p>
+</li>
+</ul>
+<h3 data-start="1553" data-end="1570" class=""><strong data-start="1557" data-end="1570">2. 验证网络设置</strong></h3>
+<p data-start="1572" data-end="1639" class="">如果网络设置不正确，设备可能无法正常连接到互联网，也就无法使用Shadowrocket。首先检查设备的网络连接，确保它能够访问互联网。</p>
+<p data-start="1641" data-end="1646" class="">解决方法：</p>
+<ul data-start="1647" data-end="1736">
+<li data-start="1647" data-end="1674" class="" style="">
+<p data-start="1649" data-end="1674" class="">确保设备已经连接到Wi-Fi网络或开启了数据流量。</p>
+</li>
+<li data-start="1675" data-end="1706" class="" style="">
+<p data-start="1677" data-end="1706" class="">进入“设置 &gt; Wi-Fi”，检查Wi-Fi连接是否稳定。</p>
+</li>
+<li data-start="1707" data-end="1736" class="" style="">
+<p data-start="1709" data-end="1736" class="">如果使用的是数据流量，确保已开启数据服务并且信号良好。</p>
+</li>
+</ul>
+<h3 data-start="1738" data-end="1765" class=""><strong data-start="1742" data-end="1765">3. 重新配置Shadowrocket</strong></h3>
+<p data-start="1767" data-end="1843" class="">有时，Shadowrocket的配置文件可能会出现问题，导致无法连接。在这种情况下，重新配置Shadowrocket并更新配置文件是解决问题的有效方法。</p>
+<p data-start="1845" data-end="1850" class="">解决方法：</p>
+<ul data-start="1851" data-end="1976">
+<li data-start="1851" data-end="1897" class="" style="">
+<p data-start="1853" data-end="1897" class="">进入Shadowrocket的设置界面，重新输入服务器地址、端口号、UUID等配置参数。</p>
+</li>
+<li data-start="1898" data-end="1950" class="" style="">
+<p data-start="1900" data-end="1950" class="">确认代理协议（如Vmess或Shadowsocks）和加密方式（如aes-128-gcm）正确无误。</p>
+</li>
+<li data-start="1951" data-end="1976" class="" style="">
+<p data-start="1953" data-end="1976" class="">点击“更新配置”按钮，确保配置文件被成功更新。</p>
+</li>
+</ul>
+<h3 data-start="1978" data-end="1999" class=""><strong data-start="1982" data-end="1999">4. 禁用防火墙和安全软件</strong></h3>
+<p data-start="2001" data-end="2071" class="">防火墙或其他安全软件有时会阻止Shadowrocket的正常运行。为了排除这种干扰，用户可以暂时禁用防火墙或安全软件，查看问题是否得到解决。</p>
+<p data-start="2073" data-end="2078" class="">解决方法：</p>
+<ul data-start="2079" data-end="2162">
+<li data-start="2079" data-end="2113" class="" style="">
+<p data-start="2081" data-end="2113" class="">进入设备的设置，关闭防火墙或其他安全软件，测试连接是否恢复正常。</p>
+</li>
+<li data-start="2114" data-end="2162" class="" style="">
+<p data-start="2116" data-end="2162" class="">如果禁用防火墙后正常工作，可以在防火墙中设置规则，允许Shadowrocket正常访问网络。</p>
+</li>
+</ul>
+<h3 data-start="2164" data-end="2184" class=""><strong data-start="2168" data-end="2184">5. 清理和重新安装应用</strong></h3>
+<p data-start="2186" data-end="2272" class="">如果上述方法都未能解决问题，可以尝试卸载并重新安装Shadowrocket。这种方法可以帮助清除潜在的配置或缓存问题，重新安装后，用户可以重新设置配置文件，通常能恢复连接。</p>
+<p data-start="2274" data-end="2279" class="">解决方法：</p>
+<ul data-start="2280" data-end="2351">
+<li data-start="2280" data-end="2310" class="" style="">
+<p data-start="2282" data-end="2310" class="">卸载Shadowrocket应用，重启手机后再重新安装。</p>
+</li>
+<li data-start="2311" data-end="2351" class="" style="">
+<p data-start="2313" data-end="2351" class="">确保从App Store或官方渠道下载最新版的Shadowrocket应用。</p>
+</li>
+</ul>
+<h2 data-start="2353" data-end="2372" class=""><strong data-start="2356" data-end="2372">如何预防未来的连接问题？</strong></h2>
+<p data-start="2374" data-end="2430" class="">尽管Shadowrocket的连接问题可以通过排查解决，但为了避免未来发生类似的问题，用户可以采取一些预防措施：</p>
+<ol data-start="2432" data-end="2608">
+<li data-start="2432" data-end="2496" class="" style="">
+<p data-start="2435" data-end="2496" class=""><strong data-start="2435" data-end="2457">定期更新Shadowrocket应用</strong>：保持应用为最新版本，可以确保与iOS系统的兼容性，并修复已知的bug和漏洞。</p>
+</li>
+<li data-start="2497" data-end="2547" class="" style="">
+<p data-start="2500" data-end="2547" class=""><strong data-start="2500" data-end="2515">选择稳定的VPN服务商</strong>：稳定的VPN服务商能够提供高质量的服务器，减少连接失败的概率。</p>
+</li>
+<li data-start="2548" data-end="2608" class="" style="">
+<p data-start="2551" data-end="2608" class=""><strong data-start="2551" data-end="2563">定期检查配置文件</strong>：配置文件有时会发生变化，确保及时更新服务器信息、UUID等，避免因配置过期导致无法连接。</p>
+</li>
+</ol>
+<h2 data-start="2610" data-end="2629" class=""><strong data-start="2613" data-end="2629">常见问题解答（FAQs）</strong></h2>
+<h3 data-start="2631" data-end="2666" class=""><strong data-start="2635" data-end="2666">Q1: Shadowrocket总是连接失败怎么回事？</strong></h3>
+<p data-start="2667" data-end="2730" class="">A: 连接失败可能是由于VPN服务器问题、网络设置错误或配置文件问题引起的。建议依次检查服务器状态、网络连接以及配置文件设置。</p>
+<h3 data-start="2732" data-end="2767" class=""><strong data-start="2736" data-end="2767">Q2: 有没有类似Shadowrocket的替代应用？</strong></h3>
+<p data-start="2768" data-end="2835" class="">A: 市面上有许多类似的应用，如Potatso Lite、Quantumult、V2RayU等，用户可以根据个人需求选择合适的替代品。</p>
+<h3 data-start="2837" data-end="2871" class=""><strong data-start="2841" data-end="2871">Q3: Shadowrocket的配置文件去哪儿找？</strong></h3>
+<p data-start="2872" data-end="2929" class="">A: 配置文件可以通过VPN服务提供商获取，也可以访问相关的网络论坛和用户群组（如Reddit）寻找配置文件分享。</p>
+<h3 data-start="2931" data-end="2968" class=""><strong data-start="2935" data-end="2968">Q4: Shadowrocket支持Android系统吗？</strong></h3>
+<p data-start="2969" data-end="3039" class="">A: 目前Shadowrocket仅支持iOS系统，Android用户可以选择其他类似的代理工具，如V2RayNG、Quantumult等。</p>
+<h3 data-start="3041" data-end="3062" class=""><strong data-start="3045" data-end="3062">Q5: 解锁配置有必要吗？</strong></h3>
+<p data-start="3063" data-end="3124" class="">A: 对于需要频繁访问被封锁网站的用户，使用解锁配置能提高连接成功率和网络流畅度。对于其他用户，可以根据需求选择常规配置。</p>
+<h2 data-start="3126" data-end="3135" class=""><strong data-start="3129" data-end="3135">总结</strong></h2>
+<p data-start="3137" data-end="3330" class="">处理Shadowrocket无法连接的问题其实并不复杂，只需根据常见原因逐步排查，并采取相应的解决方法即可。通过本文的指导，用户可以有效解决连接问题，恢复流畅的网络体验。记住，及时更新应用、选择稳定的VPN服务商以及合理配置Shadowrocket，是避免问题发生的有效手段。如果以上方法都无法解决问题，联系Shadowrocket的客服或支持团队获取进一步帮助，将是另一个不错的选择。</p>
+<h2 data-start="3332" data-end="3341" class=""><strong data-start="3335" data-end="3341">点评</strong></h2>
+<p data-start="3343" data-end="3496" class="">本篇文章为Shadowrocket用户提供了详尽的故障排查和解决方案。文章结构清晰，针对各种常见问题提供了针对性的解决方法，并涵盖了从基础网络设置到高级配置的方方面面。无论是技术小白还是有一定经验的用户，都能从中受益。文章语言简洁明了，深入浅出，非常适合帮助用户快速解决连接问题，并提高他们的网络使用体验。</p>                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98655.htm">V2Ray连接无法成功？全面解析与解决方案</a></p>
+                                        <p>下一个：<a href="/news/article-99454.htm">最科学上网软件下载：提升您的网络自由</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-82613.htm" title="科学上网利器——VNP Robot 全解析">科学上网利器——VNP Robot 全解析</a></li>
+                        <li class="py-2"><a href="/news/article-81254.htm" title="全面解析最新Clash机场：配置、使用与安全指南">全面解析最新Clash机场：配置、使用与安全指南</a></li>
+                        <li class="py-2"><a href="/news/article-83303.htm" title="Ubuntu 系统上如何实现免费科学上网：全面指南与实用技巧">Ubuntu 系统上如何实现免费科学上网：全面指南与实用技巧</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-node-share.htm" title="V2ray IOS | 3月27日22.4M/S|免费Clash/Shadowrocket/SSR/V2ray订阅节点分享">V2ray IOS | 3月27日22.4M/S|免费Clash/Shadowrocket/SSR/V2ray订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-81912.htm" title="科学上网节点加速器全解析：原理、选择与优化指南">科学上网节点加速器全解析：原理、选择与优化指南</a></li>
+                        <li class="py-2"><a href="/news/article-81911.htm" title="Quantumult下架事件深度解析：原因、影响与替代方案全指南">Quantumult下架事件深度解析：原因、影响与替代方案全指南</a></li>
+                        <li class="py-2"><a href="/news/article-85470.htm" title="2018科学上网土豆全面指南：轻松突破网络封锁，畅享全球资源">2018科学上网土豆全面指南：轻松突破网络封锁，畅享全球资源</a></li>
+                        <li class="py-2"><a href="/news/article-94400.htm" title="Clash 最新版本深度设置指南：从入门到优化的全攻略">Clash 最新版本深度设置指南：从入门到优化的全攻略</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-v2ray.htm" title="V2ray IOS | 3月24日22.6M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点分享">V2ray IOS | 3月24日22.6M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-99454.htm" title="最科学上网软件下载：提升您的网络自由">最科学上网软件下载：提升您的网络自由</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                V2ray IOS 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
