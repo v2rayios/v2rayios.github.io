@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayios.github.io/news/article-101597.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>AX3600 路由器 SSH 与 Clash 配置全面指南：提升网络安全与访问效率</title>
+        <meta name="description" content="在今天的互联网时代，网络不仅是日常生活的一部分，还是工作、娱乐和信息获取的重要平台。然而，随着网络环境的复杂性增加，如何确保安全稳定的网络访问，成为了用户关注的重点。AX3600 是一款功能强大的路由" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray IOS 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayios.github.io/news/article-101597.htm" />
+    <meta property="og:site_name" content="V2ray IOS 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="AX3600 路由器 SSH 与 Clash 配置全面指南：提升网络安全与访问效率" />
+    <meta property="og:image" content="https://v2rayios.github.io/uploads/20240728-1/d75c00c98f8556eb4655706333f86de6.webp" />
+        <meta property="og:release_date" content="2025-04-22T08:24:39" />
+    <meta property="og:updated_time" content="2025-04-22T08:24:39" />
+        <meta property="og:description" content="在今天的互联网时代，网络不仅是日常生活的一部分，还是工作、娱乐和信息获取的重要平台。然而，随着网络环境的复杂性增加，如何确保安全稳定的网络访问，成为了用户关注的重点。AX3600 是一款功能强大的路由" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="AX3600 路由器 SSH 与 Clash 配置全面指南：提升网络安全与访问效率">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TCC4Y87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TCC4Y87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>V2ray IOS</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>AX3600 路由器 SSH 与 Clash 配置全面指南：提升网络安全与访问效率</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                    
+<p data-start="45" data-end="252" class="">在今天的互联网时代，网络不仅是日常生活的一部分，还是工作、娱乐和信息获取的重要平台。然而，随着网络环境的复杂性增加，如何确保安全稳定的网络访问，成为了用户关注的重点。AX3600 是一款功能强大的路由器，而通过结合 <strong data-start="153" data-end="160">SSH</strong> 和 <strong data-start="163" data-end="172">Clash</strong>，用户可以进一步提升网络的安全性与访问效率。本文将详细介绍如何在 AX3600 路由器上配置 SSH 和 Clash，以帮助您实现更安全、更高效的网络使用体验。</p>
+<h2 data-start="254" data-end="265" class="">什么是 SSH？</h2>
+<p data-start="267" data-end="460" class="">SSH（Secure Shell，安全外壳协议）是一种用于在不安全的网络中，安全地远程登录计算机系统的协议。SSH 的主要作用是为远程通信提供一个加密通道，确保数据在传输过程中的安全性和完整性。与传统的 Telnet 协议不同，SSH 不仅加密了通信内容，还能够验证用户身份，防止密码被窃取或受到网络攻击。因此，SSH 是现代网络管理中不可或缺的工具，特别是在需要远程管理和维护设备时。</p>
+<p data-start="462" data-end="526" class="">通过 SSH，用户可以执行各种管理任务，如配置路由器、调试系统、安装软件等，并且确保在不受信任的网络环境中，操作不被泄露或篡改。</p>
+<h2 data-start="528" data-end="541" class="">什么是 Clash？</h2>
+<p data-start="543" data-end="653" class="">Clash 是一款开源的跨平台代理工具，旨在通过灵活的配置策略，让用户能够根据不同的需求，将网络流量通过不同的代理进行分流。Clash 提供了强大的代理功能，支持多种协议，能够帮助用户突破网络封锁，实现更自由的访问体验。</p>
+<p data-start="655" data-end="757" class="">Clash 的核心特点是其灵活的规则引擎，可以根据不同的需求设置代理规则，从而为不同的应用或网站提供不同的网络通道。无论是浏览网页、观看视频，还是进行在线游戏，Clash 都能够为用户提供最佳的代理服务。</p>
+<h2 data-start="759" data-end="782" class="">AX3600 路由器的系统要求与环境准备</h2>
+<p data-start="784" data-end="845" class="">在开始配置 AX3600 路由器之前，您需要做好一些准备工作。确保路由器正常工作，并且环境设置得当，才能顺利进行后续配置。</p>
+<h3 data-start="847" data-end="857" class="">确保固件版本</h3>
+<p data-start="859" data-end="974" class="">首先，请确保 AX3600 路由器的固件版本为最新版本。访问路由器的管理页面（通常是 <code data-start="902" data-end="915">192.168.1.1</code>），查看路由器的固件版本，并检查是否有可用的更新。通过更新固件，您可以避免一些兼容性问题，并提高路由器的安全性和性能。</p>
+<h3 data-start="976" data-end="984" class="">网络设置</h3>
+<p data-start="986" data-end="1062" class="">登录到 AX3600 的管理界面后，检查网络设置，确保 WAN 和 LAN 配置正确无误。如果需要配置特定的 VLAN 或者子网，也可以在这里进行设置。</p>
+<h2 data-start="1064" data-end="1083" class="">在 AX3600 上启用 SSH</h2>
+<p data-start="1085" data-end="1138" class="">启用 SSH 功能后，您就可以通过加密连接远程管理您的 AX3600 路由器。以下是启用 SSH 的步骤：</p>
+<ol data-start="1140" data-end="1387">
+<li data-start="1140" data-end="1206" class="" style="">
+<p data-start="1143" data-end="1206" class=""><strong data-start="1143" data-end="1154">登录路由器界面</strong>：在浏览器中输入 <code data-start="1163" data-end="1176">192.168.1.1</code>，进入 AX3600 的管理页面。使用管理员账号和密码登录。</p>
+</li>
+<li data-start="1207" data-end="1262" class="" style="">
+<p data-start="1210" data-end="1262" class=""><strong data-start="1210" data-end="1223">找到 SSH 设置</strong>：在路由器的设置页面中，找到“远程管理”或“系统管理”选项，进入相关设置界面。</p>
+</li>
+<li data-start="1263" data-end="1329" class="" style="">
+<p data-start="1266" data-end="1329" class=""><strong data-start="1266" data-end="1276">启用 SSH</strong>：找到 SSH 设置并启用。默认情况下，SSH 使用端口 22。如果您需要增强安全性，可以选择更改端口号。</p>
+</li>
+<li data-start="1330" data-end="1387" class="" style="">
+<p data-start="1333" data-end="1387" class=""><strong data-start="1333" data-end="1343">设置用户权限</strong>：根据需要设置不同用户的 SSH 访问权限。确保只允许授权用户登录，并限制不必要的操作。</p>
+</li>
+</ol>
+<p data-start="1389" data-end="1440" class="">启用 SSH 后，您就可以使用 SSH 客户端（如 PuTTY）远程连接到路由器，进行管理和配置操作。</p>
+<h2 data-start="1442" data-end="1456" class="">下载并安装 Clash</h2>
+<p data-start="1458" data-end="1548" class="">Clash 是一款跨平台的代理工具，支持 Windows、Linux、macOS、Android 和 iOS 等多个操作系统。以下是如何在 AX3600 路由器上配置 Clash。</p>
+<h3 data-start="1550" data-end="1560" class="">下载最新版本</h3>
+<ol data-start="1562" data-end="1668">
+<li data-start="1562" data-end="1649" class="" style="">
+<p data-start="1565" data-end="1649" class="">访问 Clash 的 <a data-start="1576" data-end="1634" rel="noopener" target="_new" class="" href="https://github.com/Dreamacro/clash/releases">GitHub 官方页面</a>，下载适用于您系统的最新版本。</p>
+</li>
+<li data-start="1650" data-end="1668" class="" style="">
+<p data-start="1653" data-end="1668" class="">解压下载的文件并准备进行安装。</p>
+</li>
+</ol>
+<h3 data-start="1670" data-end="1682" class="">配置 Clash</h3>
+<p data-start="1684" data-end="1753" class="">Clash 的配置文件通常为 <code data-start="1699" data-end="1712">config.yaml</code>。这是 Clash 的核心配置文件，用户可以在其中设置代理节点、规则、端口等信息。</p>
+<ol data-start="1755" data-end="1895">
+<li data-start="1755" data-end="1828" class="" style="">
+<p data-start="1758" data-end="1828" class="">将 Clash 的 <code data-start="1768" data-end="1781">config.yaml</code> 文件放入路由器指定的文件夹中，通常这个文件夹位于 <code data-start="1807" data-end="1819">/etc/clash</code> 或者类似的路径。</p>
+</li>
+<li data-start="1829" data-end="1895" class="" style="">
+<p data-start="1832" data-end="1895" class="">根据需要修改配置文件，指定代理节点、设置规则和模式等。Clash 允许用户根据域名、IP 地址、协议类型等进行灵活的代理设置。</p>
+</li>
+</ol>
+<h3 data-start="1897" data-end="1915" class="">配置 PAC 或 Proxy</h3>
+<p data-start="1917" data-end="1975" class="">Clash 提供了 PAC（Proxy Auto-Config）模式和 Proxy 模式，用户可以根据需求选择使用：</p>
+<ul data-start="1977" data-end="2077">
+<li data-start="1977" data-end="2040" class="" style="">
+<p data-start="1979" data-end="2040" class=""><strong data-start="1979" data-end="1989">PAC 模式</strong>：适用于需要根据不同规则自动选择代理的情况。用户可以配置 PAC 文件，自动决定哪些流量需要通过代理。</p>
+</li>
+<li data-start="2041" data-end="2077" class="" style="">
+<p data-start="2043" data-end="2077" class=""><strong data-start="2043" data-end="2055">Proxy 模式</strong>：适用于将所有流量都通过代理进行转发的情况。</p>
+</li>
+</ul>
+<p data-start="2079" data-end="2144" class="">在配置文件内，您可以根据需要修改代理的规则，如为特定网站或应用添加独立的代理规则，支持多种代理模式的切换，以便满足不同的上网需求。</p>
+<h2 data-start="2146" data-end="2176" class="">在 AX3600 上测试 SSH 和 Clash 配置</h2>
+<p data-start="2178" data-end="2217" class="">完成 SSH 和 Clash 的配置后，进行测试是确保一切正常工作的重要步骤。</p>
+<h3 data-start="2219" data-end="2232" class="">测试 SSH 配置</h3>
+<p data-start="2234" data-end="2323" class="">使用 SSH 客户端（如 PuTTY）登录到 AX3600 路由器，输入相应的 IP 地址、端口和用户凭证，验证 SSH 是否配置成功。如果能成功登录并执行命令，则说明配置正确。</p>
+<h3 data-start="2325" data-end="2340" class="">测试 Clash 配置</h3>
+<p data-start="2342" data-end="2417" class="">通过浏览器或其他应用程序，设置代理为 Clash 所配置的地址和端口，检查是否能够顺利通过代理访问外网。如果网络访问正常，说明 Clash 配置成功。</p>
+<h2 data-start="2419" data-end="2433" class="">常见问题解答（FAQ）</h2>
+<h3 data-start="2435" data-end="2463" class="">1. SSH 相比于 Telnet 有什么优点？</h3>
+<p data-start="2465" data-end="2573" class="">SSH 是一种加密连接方式，而 Telnet 是未加密的。通过 SSH，所有数据都经过加密，避免了数据在传输过程中被窃取或篡改。因此，SSH 比 Telnet 更安全，尤其在需要远程管理设备时，SSH 是更好的选择。</p>
+<h3 data-start="2575" data-end="2597" class="">2. Clash 的最佳配置是什么？</h3>
+<p data-start="2599" data-end="2679" class="">Clash 的最佳配置根据用户的实际需求而定。一般来说，用户需要根据网络环境选择合适的代理节点，并设置合理的规则。可以通过试验不同的配置，找到最适合自己的方案。</p>
+<h3 data-start="2681" data-end="2703" class="">3. 能否通过手机使用 Clash？</h3>
+<p data-start="2705" data-end="2776" class="">是的，Clash 支持 Android 和 iOS 操作系统。用户可以在手机上安装适配的 Clash 客户端，方便随时随地管理代理和网络访问。</p>
+<h3 data-start="2778" data-end="2798" class="">4. 为什么我无法连接 SSH？</h3>
+<p data-start="2800" data-end="2903" class="">如果无法连接 SSH，首先检查 SSH 的端口是否正确设置，以及防火墙设置是否允许通过该端口访问。同时，检查路由器的固件版本，确保没有已知的 SSH 问题。如果仍然无法连接，可以尝试重启路由器后再进行连接。</p>
+<h3 data-start="2905" data-end="2929" class="">5. 配置 Clash 时需要注意什么？</h3>
+<p data-start="2931" data-end="3017" class="">配置 Clash 时，务必确保 YAML 配置文件的格式正确。YAML 格式非常敏感，缩进和符号的使用都需要严格遵守规则。错误的配置文件可能导致 Clash 无法正常启动。</p>
+<h2 data-start="3019" data-end="3024" class="">结论</h2>
+<p data-start="3026" data-end="3183" class="">通过本指南，您已经掌握了如何在 AX3600 路由器上配置 SSH 和 Clash，提升网络安全性和访问效率。配置 SSH 可以让您通过安全的远程方式管理路由器，而 Clash 则提供了强大的代理功能，帮助您优化网络访问。根据实际需求，定期更新代理规则和 SSH 配置，保持网络的优化状态，确保获得最佳的网络体验。</p>
+<p data-start="3185" data-end="3239" class="">希望本教程能够帮助您成功配置 AX3600 路由器的 SSH 和 Clash，享受更加安全、稳定的网络访问。</p>
+<hr data-start="3241" data-end="3244" class="">
+<h3 data-start="3246" data-end="3254" class="">语言点评</h3>
+<p data-start="3256" data-end="3450" class="">这篇文章不仅内容详实，而且条理清晰。作者从基础概念出发，循序渐进地介绍了如何配置 SSH 和 Clash，并提供了详细的操作步骤。文章中不仅涉及了理论知识，还通过实际操作帮助用户理解如何应用这些工具，特别是对初学者而言，教程非常易懂。此外，文章还考虑到常见问题并给出了具体解决方案，增强了实用性。总的来说，这篇文章是一次非常成功的技术分享，既适合初学者，也为有经验的用户提供了参考和思路。</p>                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100878.htm">智能电视Clash无法联网怎么办？全方位排查与解决指南</a></p>
+                                        <p>下一个：<a href="/news/article-101598.htm">360路由器P2科学上网详细教程：配置、使用与常见问题解析</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-80068.htm" title="如何使用梅林科学上网68实现网络自由：完整指南与实用技巧">如何使用梅林科学上网68实现网络自由：完整指南与实用技巧</a></li>
+                        <li class="py-2"><a href="/news/article-96533.htm" title="玩转斐讯K2：Vmess协议配置全攻略，让科学上网更简单安全">玩转斐讯K2：Vmess协议配置全攻略，让科学上网更简单安全</a></li>
+                        <li class="py-2"><a href="/news/article-89778.htm" title="V2Ray 网络流量解析与配置全指南：让你的上网更自由、更安全！">V2Ray 网络流量解析与配置全指南：让你的上网更自由、更安全！</a></li>
+                        <li class="py-2"><a href="/news/article-101598.htm" title="360路由器P2科学上网详细教程：配置、使用与常见问题解析">360路由器P2科学上网详细教程：配置、使用与常见问题解析</a></li>
+                        <li class="py-2"><a href="/news/article-97999.htm" title="科学上网必备路由器选择指南：畅享高速、安全网络体验">科学上网必备路由器选择指南：畅享高速、安全网络体验</a></li>
+                        <li class="py-2"><a href="/news/article-85469.htm" title="科学上网与VPN翻墙：如何突破网络限制访问全球内容">科学上网与VPN翻墙：如何突破网络限制访问全球内容</a></li>
+                        <li class="py-2"><a href="/news/article-86179.htm" title="盗版 Shadowrocket 的使用及风险详解">盗版 Shadowrocket 的使用及风险详解</a></li>
+                        <li class="py-2"><a href="/news/article-98000.htm" title="深入探讨：Clash无法开启代理的原因及解决方案">深入探讨：Clash无法开启代理的原因及解决方案</a></li>
+                        <li class="py-2"><a href="/news/article-97198.htm" title="Surfboard直连与代理：如何根据需求选择最佳连接方式">Surfboard直连与代理：如何根据需求选择最佳连接方式</a></li>
+                        <li class="py-2"><a href="/news/article-81911.htm" title="Quantumult下架事件深度解析：原因、影响与替代方案全指南">Quantumult下架事件深度解析：原因、影响与替代方案全指南</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">49</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                V2ray IOS 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
