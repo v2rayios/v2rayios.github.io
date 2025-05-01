@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayios.github.io/news/article-106358.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Clash配置完成后别急用：全面操作指南与优化建议</title>
+        <meta name="description" content="对于许多希望实现科学上网、提升网络连接稳定性和速度的用户来说，Clash 已经成为桌面端的首选代理工具之一。完成初次安装与配置固然重要，但真正决定体验好坏的，却是配置成功之后的使用、维护与优化环节。
+" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray IOS 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayios.github.io/news/article-106358.htm" />
+    <meta property="og:site_name" content="V2ray IOS 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="Clash配置完成后别急用：全面操作指南与优化建议" />
+    <meta property="og:image" content="https://v2rayios.github.io/uploads/20240728-1/e15cd7ee7c85062326d0834c56bbbcc5.webp" />
+        <meta property="og:release_date" content="2025-04-28T09:46:26" />
+    <meta property="og:updated_time" content="2025-04-28T09:46:26" />
+        <meta property="og:description" content="对于许多希望实现科学上网、提升网络连接稳定性和速度的用户来说，Clash 已经成为桌面端的首选代理工具之一。完成初次安装与配置固然重要，但真正决定体验好坏的，却是配置成功之后的使用、维护与优化环节。
+" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Clash配置完成后别急用：全面操作指南与优化建议">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TCC4Y87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TCC4Y87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>V2ray IOS</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>Clash配置完成后别急用：全面操作指南与优化建议</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                    
+<p data-start="29" data-end="128" class="">对于许多希望实现科学上网、提升网络连接稳定性和速度的用户来说，Clash 已经成为桌面端的首选代理工具之一。完成初次安装与配置固然重要，但真正决定体验好坏的，却是配置成功之后的使用、维护与优化环节。</p>
+<p data-start="130" data-end="269" class="">正如一辆刚出厂的跑车，如果驾驶者不了解油门、刹车与方向盘的协同机制，那么再强劲的引擎也难以发挥真正性能。Clash 也是如此。本文将从实操角度出发，为你详解配置生效验证、日常使用调试、配置文件管理、安全性维护等关键操作，让你的 Clash 不只是“装好了”，而是真正“用得好”。</p>
+<hr data-start="271" data-end="274" class="" style="">
+<h2 data-start="276" data-end="301" class="">一、确认Clash配置是否生效：第一步不能跳</h2>
+<p data-start="303" data-end="377" class="">在正式使用 Clash 代理功能前，确保配置已经正确生效是基础中的基础，否则后续所有的操作都等于“空中楼阁”。以下是几种验证配置是否生效的实用方法：</p>
+<h3 data-start="379" data-end="394" class="">1. 查看运行日志</h3>
+<p data-start="396" data-end="443" class="">打开 Clash 图形界面，进入「日志」标签页。正常情况下，你会看到代理连接的请求记录。例如：</p>
+<pre class="overflow-visible!" data-start="445" data-end="489"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">css</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><span class="" data-state="closed"></span><span class="" data-state="closed"></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-selector-attr">[Proxy]</span></span><span> → GET www</span><span><span class="hljs-selector-class">.google</span></span><span><span class="hljs-selector-class">.com</span></span><span> via 节点</span><span><span class="hljs-selector-tag">A</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="491" data-end="517" class="">如果日志一片空白，可能说明没有任何网络请求通过代理。</p>
+<h3 data-start="519" data-end="536" class="">2. 检查IP地址变化</h3>
+<p data-start="538" data-end="660" class="">访问 <a data-start="541" data-end="563" rel="noopener" target="_new" class="" href="https://ip.sb">ip.sb</a> 或 <a data-start="566" data-end="596" rel="noopener" target="_new" class="" href="https://ipinfo.io">ipinfo.io</a> 等 IP 查询网站，对比当前显示的 IP 是否来自你设置的节点国家或地区。如果IP仍然显示为你本地城市，那么代理并未启用成功。</p>
+<h3 data-start="662" data-end="681" class="">3. 访问受限网站进行测试</h3>
+<p data-start="683" data-end="747" class="">尝试打开 Google、YouTube、GitHub 等网站，若能成功访问且加载速度良好，说明 Clash 的代理功能大致正常。</p>
+<h3 data-start="749" data-end="770" class="">4. 使用测速工具检测网络变化</h3>
+<p data-start="772" data-end="842" class="">可以使用 Speedtest 或 Fast.com 来测试节点代理下的带宽与延迟，对比直连与代理后的速度变化，有助于了解不同节点的性能表现。</p>
+<hr data-start="844" data-end="847" class="">
+<h2 data-start="849" data-end="865" class="">二、常见问题排查与调试方法</h2>
+<p data-start="867" data-end="941" class="">Clash 虽然强大，但对于初次接触的小白用户来说，也会因为一些小细节而误以为“配置失败”或“无法使用”。以下是使用过程中经常遇到的问题及解决建议：</p>
+<h3 data-start="943" data-end="957" class="">1. 无法连接互联网</h3>
+<ul data-start="959" data-end="1127">
+<li data-start="959" data-end="1007" class="">
+<p data-start="961" data-end="1007" class=""><strong data-start="961" data-end="973">检查代理端口设置</strong>：确保 Clash 设置的本地端口与你浏览器/系统中的代理端口一致。</p>
+</li>
+<li data-start="1008" data-end="1061" class="">
+<p data-start="1010" data-end="1061" class=""><strong data-start="1010" data-end="1024">防火墙或杀毒软件阻拦</strong>：有些杀毒软件会默认拦截 Clash 的网络请求，需在防火墙中添加白名单。</p>
+</li>
+<li data-start="1062" data-end="1127" class="">
+<p data-start="1064" data-end="1127" class=""><strong data-start="1064" data-end="1074">规则设置不当</strong>：如启用了“规则模式”但规则文件中缺乏目标网站条目，可能导致访问失败。建议尝试切换为“全局模式”验证问题。</p>
+</li>
+</ul>
+<h3 data-start="1129" data-end="1144" class="">2. 网络访问速度缓慢</h3>
+<ul data-start="1146" data-end="1294">
+<li data-start="1146" data-end="1198" class="">
+<p data-start="1148" data-end="1198" class=""><strong data-start="1148" data-end="1158">节点质量不佳</strong>：选择距离较近或负载较低的服务器节点。亚洲用户常推荐使用香港、新加坡或日本节点。</p>
+</li>
+<li data-start="1199" data-end="1252" class="">
+<p data-start="1201" data-end="1252" class=""><strong data-start="1201" data-end="1210">连接数过多</strong>：浏览器或下载器如设定为多线程连接，容易造成 Clash 占用过高，建议降低并发数。</p>
+</li>
+<li data-start="1253" data-end="1294" class="">
+<p data-start="1255" data-end="1294" class=""><strong data-start="1255" data-end="1265">本地网络瓶颈</strong>：确认不是你本地Wi-Fi信号弱或带宽本身就不稳定的问题。</p>
+</li>
+</ul>
+<hr data-start="1296" data-end="1299" class="">
+<h2 data-start="1301" data-end="1323" class="">三、配置文件的科学管理：进阶用户必修课</h2>
+<p data-start="1325" data-end="1388" class="">Clash 的真正强大之处，在于其高度可配置性。通过 YAML 格式的配置文件，用户可以细致定义各类规则、节点分组与连接策略。</p>
+<h3 data-start="1390" data-end="1406" class="">1. 配置文件导入与备份</h3>
+<ul data-start="1408" data-end="1525">
+<li data-start="1408" data-end="1467" class="">
+<p data-start="1410" data-end="1467" class=""><strong data-start="1410" data-end="1418">导入配置</strong>：Clash 图形界面允许你直接导入 YAML 配置文件。你可以使用订阅链接，也可以上传本地文件。</p>
+</li>
+<li data-start="1468" data-end="1525" class="">
+<p data-start="1470" data-end="1525" class=""><strong data-start="1470" data-end="1478">备份配置</strong>：建议在测试新规则或节点之前，先导出当前配置作为备份，以防“实验过头”后找不回原来的稳定状态。</p>
+</li>
+</ul>
+<h3 data-start="1527" data-end="1540" class="">2. 编辑配置内容</h3>
+<ul data-start="1542" data-end="1708">
+<li data-start="1542" data-end="1582" class="">
+<p data-start="1544" data-end="1582" class=""><strong data-start="1544" data-end="1554">调整节点顺序</strong>：将你最常用、速度最快的节点放在靠前位置，利于优先选用。</p>
+</li>
+<li data-start="1583" data-end="1649" class="">
+<p data-start="1585" data-end="1649" class=""><strong data-start="1585" data-end="1595">定义分组策略</strong>：比如设置“自动选择”、“手动选择”、“国外流量”、“国内直连”等分组，以便规则匹配后按需使用不同代理路径。</p>
+</li>
+<li data-start="1650" data-end="1708" class="">
+<p data-start="1652" data-end="1708" class=""><strong data-start="1652" data-end="1664">使用第三方规则集</strong>：如 ACL4SSR、ConnersHua 等开源规则集，能帮你轻松实现细致的分流需求。</p>
+</li>
+</ul>
+<h3 data-start="1710" data-end="1729" class="">3. 规则模式 vs 全局模式</h3>
+<ul data-start="1731" data-end="1820">
+<li data-start="1731" data-end="1766" class="">
+<p data-start="1733" data-end="1766" class=""><strong data-start="1733" data-end="1741">规则模式</strong>：只对特定网站走代理，其他直接连接，适合日常使用。</p>
+</li>
+<li data-start="1767" data-end="1820" class="">
+<p data-start="1769" data-end="1820" class=""><strong data-start="1769" data-end="1777">全局模式</strong>：所有流量均通过代理，适用于开发测试或完全隔离的场景，但会对速度和稳定性产生更高要求。</p>
+</li>
+</ul>
+<hr data-start="1822" data-end="1825" class="">
+<h2 data-start="1827" data-end="1844" class="">四、保持软件与规则的持续更新</h2>
+<p data-start="1846" data-end="1892" class="">Clash 的开发者社区活跃，几乎每月都会进行更新，包括 bug 修复、性能优化和功能增强。</p>
+<h3 data-start="1894" data-end="1903" class="">如何更新？</h3>
+<ul data-start="1905" data-end="2016">
+<li data-start="1905" data-end="1926" class="">
+<p data-start="1907" data-end="1926" class="">图形界面用户可以直接点击“检查更新”；</p>
+</li>
+<li data-start="1927" data-end="1988" class="">
+<p data-start="1929" data-end="1988" class="">使用命令行版 Clash（如 clash-meta）时，可从 GitHub 获取最新 release 并替换原有文件；</p>
+</li>
+<li data-start="1989" data-end="2016" class="">
+<p data-start="1991" data-end="2016" class="">规则订阅也应定期更新，以适应国内外网络环境的变化。</p>
+</li>
+</ul>
+<p data-start="2018" data-end="2066" class="">小贴士：你可以设置定时任务或使用 Clash Dashboard 插件来自动更新规则和订阅配置。</p>
+<hr data-start="2068" data-end="2071" class="">
+<h2 data-start="2073" data-end="2093" class="">五、安全性与隐私：你不能忽略的底线</h2>
+<p data-start="2095" data-end="2133" class="">虽然 Clash 是本地运行的代理客户端，但仍然需要关注网络安全与隐私防护：</p>
+<h3 data-start="2135" data-end="2148" class="">1. 使用加密协议</h3>
+<p data-start="2150" data-end="2233" class="">确保所有节点连接均采用安全协议（如 TLS、Trojan、VMess + TLS、Shadowsocks + AEAD）。不要使用明文传输协议，避免数据被第三方嗅探。</p>
+<h3 data-start="2235" data-end="2251" class="">2. 定期清理缓存与日志</h3>
+<p data-start="2253" data-end="2301" class="">Clash 会在运行过程中产生大量连接日志，长期累积可能影响性能，建议定期清理，或设置自动删除。</p>
+<h3 data-start="2303" data-end="2314" class="">3. 账号安全</h3>
+<p data-start="2316" data-end="2359" class="">若使用远程订阅服务或面板管理 Clash，切记为后台界面设置密码，避免被恶意远程控制。</p>
+<hr data-start="2361" data-end="2364" class="">
+<h2 data-start="2366" data-end="2383" class="">六、FAQ 常见问题解答汇总</h2>
+<p data-start="2385" data-end="2470" class=""><strong data-start="2385" data-end="2410">Q1：Clash 配置文件的格式是怎样的？</strong><br data-start="2410" data-end="2413">
+A1：Clash 使用 YAML 格式进行配置，后缀通常为 <code data-start="2443" data-end="2450">.yaml</code> 或 <code data-start="2453" data-end="2459">.yml</code>，语法清晰，结构分明。</p>
+<p data-start="2472" data-end="2532" class=""><strong data-start="2472" data-end="2488">Q2：我能自定义规则吗？</strong><br data-start="2488" data-end="2491">
+A2：完全可以。Clash 支持用户自行定义域名规则、IP段分流等，灵活性非常高。</p>
+<p data-start="2534" data-end="2608" class=""><strong data-start="2534" data-end="2554">Q3：配置失败的常见原因有哪些？</strong><br data-start="2554" data-end="2557">
+A3：最常见的包括：节点订阅地址错误、端口冲突、配置文件语法错误、网络阻断或 Clash 版本不兼容。</p>
+<p data-start="2610" data-end="2683" class=""><strong data-start="2610" data-end="2638">Q4：为什么我明明配置好了，但访问不了国外网站？</strong><br data-start="2638" data-end="2641">
+A4：可能的原因包括 DNS 解析失败、ISP 层封锁、规则未匹配等，建议逐步排查。</p>
+<hr data-start="2685" data-end="2688" class="">
+<h2 data-start="2690" data-end="2722" class="">总结：Clash不仅是工具，更是一门值得研究的“网络艺术”</h2>
+<p data-start="2724" data-end="2808" class="">从配置到使用，从规则管理到安全防护，Clash 不只是一个代理工具，更像是一个<strong data-start="2763" data-end="2777">可定制的网络控制中心</strong>。它帮助用户重新掌控数据流向，打造专属的、更加自由的网络环境。</p>
+<hr data-start="2810" data-end="2813" class="">
+<h2 data-start="2815" data-end="2848" class="">点评：从“工具”到“能力”，Clash是每位现代网民的必修课</h2>
+<p data-start="2850" data-end="2965" class="">Clash 不以华丽界面吸引用户，也没有傻瓜式的一键翻墙设计，但它所代表的，是对自由、效率与技术美学的极致追求。它教会我们，不只是“用”网络，更是“掌控”网络。配置只是开始，持续的理解、维护与优化，才是你真正迈入数字时代的通行证。</p>
+<p data-start="2967" data-end="3032" class="">在这个网络环境逐渐复杂化的年代，懂得使用 Clash，不只是走快一步，而是拥有穿越网络壁垒的钥匙。这，不仅仅是技术，更是一种能力。</p>                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-106357.htm">全面解析：让你的V2Ray飞起来——提升速度的实用技巧与深度优化指南</a></p>
+                                        <p>下一个：<a href="/news/article-107397.htm">完全解析批发V2Ray节点：如何选择最佳服务实现高速安全上网</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-86902.htm" title="科学上网软件下载：如何选择、安装与配置科学上网工具">科学上网软件下载：如何选择、安装与配置科学上网工具</a></li>
+                        <li class="py-2"><a href="/news/article-98656.htm" title="解决Shadowrocket无法连接问题：详细的故障排查与修复指南">解决Shadowrocket无法连接问题：详细的故障排查与修复指南</a></li>
+                        <li class="py-2"><a href="/news/article-88321.htm" title="V2Ray 官方源码安装完整指南">V2Ray 官方源码安装完整指南</a></li>
+                        <li class="py-2"><a href="/news/article-105722.htm" title="Quantumult视觉定制艺术：从基础配色到高级主题设计的完整指南">Quantumult视觉定制艺术：从基础配色到高级主题设计的完整指南</a></li>
+                        <li class="py-2"><a href="/news/article-95060.htm" title="完整指南：如何配置科学上网服务器实现自由网络访问">完整指南：如何配置科学上网服务器实现自由网络访问</a></li>
+                        <li class="py-2"><a href="/news/article-103957.htm" title="科学上网工具全解析：如何选择与使用最佳电脑工具">科学上网工具全解析：如何选择与使用最佳电脑工具</a></li>
+                        <li class="py-2"><a href="/news/article-90548.htm" title="解决Shadowrocket不能用4G的全面指南">解决Shadowrocket不能用4G的全面指南</a></li>
+                        <li class="py-2"><a href="/news/article-108189.htm" title="安卓手机配置vmess详解：打造高效、安全的科学上网环境">安卓手机配置vmess详解：打造高效、安全的科学上网环境</a></li>
+                        <li class="py-2"><a href="/news/article-95061.htm" title="解锁v2rayNG日志系统的全部潜力：配置、分析与实战技巧全指南">解锁v2rayNG日志系统的全部潜力：配置、分析与实战技巧全指南</a></li>
+                        <li class="py-2"><a href="/news/article-103956.htm" title="完全指南：如何使用、安装与配置无界v2rayng">完全指南：如何使用、安装与配置无界v2rayng</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                V2ray IOS 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
