@@ -1,4 +1,4 @@
-# V2ray IOS | 5月1日19.7M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点分享  更新时间 2025-05-01 09:12:02
+# V2ray IOS | 5月6日20M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享  更新时间 2025-05-06 08:55:48
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://v2rayios.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://v2rayios.github.io/uploads/2025/05/0-20250501.yaml
-- https://v2rayios.github.io/uploads/2025/05/1-20250501.yaml
-- https://v2rayios.github.io/uploads/2025/05/2-20250501.yaml
-- https://v2rayios.github.io/uploads/2025/05/3-20250501.yaml
-- https://v2rayios.github.io/uploads/2025/05/4-20250501.yaml
+- https://v2rayios.github.io/uploads/2025/05/0-20250506.yaml
+- https://v2rayios.github.io/uploads/2025/05/1-20250506.yaml
+- https://v2rayios.github.io/uploads/2025/05/2-20250506.yaml
+- https://v2rayios.github.io/uploads/2025/05/3-20250506.yaml
+- https://v2rayios.github.io/uploads/2025/05/4-20250506.yaml
 
 ### V2ray订阅链接
 
-- https://v2rayios.github.io/uploads/2025/05/0-20250501.txt
-- https://v2rayios.github.io/uploads/2025/05/1-20250501.txt
-- https://v2rayios.github.io/uploads/2025/05/2-20250501.txt
-- https://v2rayios.github.io/uploads/2025/05/3-20250501.txt
-- https://v2rayios.github.io/uploads/2025/05/4-20250501.txt
+- https://v2rayios.github.io/uploads/2025/05/0-20250506.txt
+- https://v2rayios.github.io/uploads/2025/05/1-20250506.txt
+- https://v2rayios.github.io/uploads/2025/05/2-20250506.txt
+- https://v2rayios.github.io/uploads/2025/05/3-20250506.txt
+- https://v2rayios.github.io/uploads/2025/05/4-20250506.txt
 
 ### Sing-box订阅链接
 
-- https://v2rayios.github.io/uploads/2025/05/20250501.json
+- https://v2rayios.github.io/uploads/2025/05/20250506.json
 
 ## 更多clash节点订阅 ：
 
