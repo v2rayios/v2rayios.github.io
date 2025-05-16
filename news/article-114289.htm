@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://v2rayios.github.io/news/article-114289.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>深入讲解网卡与V2Ray的配置与使用：优化网络性能与安全性</title>
+        <meta name="description" content="随着互联网技术的不断发展，越来越多的用户开始关注如何保障自身的网络安全与隐私，而使用代理软件成为了解决这一问题的有效手段。V2Ray，作为一款新型的代理工具，因其多协议支持、灵活配置和强大的穿透能力，" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="V2ray IOS 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://v2rayios.github.io/news/article-114289.htm" />
+    <meta property="og:site_name" content="V2ray IOS 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="深入讲解网卡与V2Ray的配置与使用：优化网络性能与安全性" />
+    <meta property="og:image" content="https://v2rayios.github.io/uploads/20240728-1/392ab026d06c58058c1c71c76a671b5e.webp" />
+        <meta property="og:release_date" content="2025-05-12T10:12:44" />
+    <meta property="og:updated_time" content="2025-05-12T10:12:44" />
+        <meta property="og:description" content="随着互联网技术的不断发展，越来越多的用户开始关注如何保障自身的网络安全与隐私，而使用代理软件成为了解决这一问题的有效手段。V2Ray，作为一款新型的代理工具，因其多协议支持、灵活配置和强大的穿透能力，" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="深入讲解网卡与V2Ray的配置与使用：优化网络性能与安全性">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TCC4Y87CW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7TCC4Y87CW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>V2ray IOS</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>深入讲解网卡与V2Ray的配置与使用：优化网络性能与安全性</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                    
+<p data-start="33" data-end="238" class="">随着互联网技术的不断发展，越来越多的用户开始关注如何保障自身的网络安全与隐私，而使用代理软件成为了解决这一问题的有效手段。V2Ray，作为一款新型的代理工具，因其多协议支持、灵活配置和强大的穿透能力，成为许多网络用户的首选。与此同时，网卡作为计算机连接互联网的核心硬件之一，其性能直接影响到网络的传输质量和代理工具的使用效果。因此，如何将网卡与V2Ray结合使用，已成为许多技术爱好者和专业人士关注的热点问题。</p>
+<p data-start="240" data-end="327" class="">本文将深入探讨网卡与V2Ray的配置与使用，分析如何通过优化网卡性能，提升V2Ray的代理效果，并提供详细的配置指南和技巧，帮助用户在实际应用中实现更高效、更安全的网络环境。</p>
+<h2 data-start="329" data-end="346" class="">什么是网卡？其在网络中的作用</h2>
+<p data-start="348" data-end="528" class="">网卡（Network Interface Card），又称网络适配器，是计算机连接网络的硬件设备，负责计算机与网络之间的数据交换。网卡可以是内置的，也可以是外部扩展的，其主要功能是将计算机内部的数字信息转换成网络能够理解的数据包，或将网络上的数据包转换回计算机可以处理的格式。网卡作为计算机网络连接的重要组成部分，它的性能直接影响到网络数据传输的速度与稳定性。</p>
+<p data-start="530" data-end="622" class="">常见的网卡有有线网卡和无线网卡两种。无论是通过Wi-Fi连接的无线网卡，还是通过网线连接的有线网卡，它们都需要在操作系统中正确配置，才能确保计算机能够与其他设备或服务器进行高效的通讯。</p>
+<h2 data-start="624" data-end="636" class="">什么是V2Ray？</h2>
+<p data-start="638" data-end="768" class="">V2Ray是一款功能强大的代理软件，旨在为用户提供安全、快速、灵活的网络连接。V2Ray通过不同的协议（如VMess、Shadowsocks、Trojan等）对数据进行加密与转发，使得用户能够绕过网络封锁，突破地域限制，保障上网隐私。V2Ray的主要特点包括：</p>
+<ul data-start="770" data-end="993">
+<li data-start="770" data-end="839" class="" style="">
+<p data-start="772" data-end="839" class=""><strong data-start="772" data-end="781">多协议支持</strong>：V2Ray支持多种主流协议，用户可以根据需求选择最适合的协议，如VMess、Shadowsocks、HTTPS等。</p>
+</li>
+<li data-start="840" data-end="894" class="" style="">
+<p data-start="842" data-end="894" class=""><strong data-start="842" data-end="850">灵活配置</strong>：用户可以根据不同的使用场景和需求，灵活调整V2Ray的配置，实现高度自定义的代理设置。</p>
+</li>
+<li data-start="895" data-end="950" class="" style="">
+<p data-start="897" data-end="950" class=""><strong data-start="897" data-end="907">强大穿透能力</strong>：V2Ray具有较强的网络穿透能力，可以应对不同的网络环境，提供稳定且快速的代理服务。</p>
+</li>
+<li data-start="951" data-end="993" class="" style="">
+<p data-start="953" data-end="993" class=""><strong data-start="953" data-end="960">安全性</strong>：V2Ray采用多重加密手段，确保数据传输的安全性，保护用户隐私。</p>
+</li>
+</ul>
+<p data-start="995" data-end="1063" class="">通过这些功能，V2Ray为用户提供了更好的互联网使用体验，尤其是在防止网络监控、突破地域限制和提高网络安全性方面，展现出了其独特的优势。</p>
+<h2 data-start="1065" data-end="1081" class="">网卡与V2Ray的结合使用</h2>
+<p data-start="1083" data-end="1201" class="">当我们在使用V2Ray进行代理时，网卡的性能直接影响到代理效果。选择合适的网卡并对其进行优化，能够提升V2Ray的网络性能，增强网络传输的稳定性和速度。以下是一些关于网卡与V2Ray结合使用的配置步骤与技巧，帮助用户实现最佳的网络体验。</p>
+<h3 data-start="1203" data-end="1211" class="">配置步骤</h3>
+<ol data-start="1213" data-end="2003">
+<li data-start="1213" data-end="1336" class="" style="">
+<p data-start="1216" data-end="1228" class=""><strong data-start="1216" data-end="1228">确认网卡驱动安装</strong></p>
+<p data-start="1233" data-end="1336" class="">确保计算机的网卡驱动程序已正确安装，并且驱动程序是最新的。一个未更新的或损坏的网卡驱动可能会导致网络连接不稳定，从而影响V2Ray的使用效果。因此，定期检查网卡驱动并更新至最新版本是保证网络顺畅运行的基础。</p>
+</li>
+<li data-start="1338" data-end="1466" class="" style="">
+<p data-start="1341" data-end="1351" class=""><strong data-start="1341" data-end="1351">设置IP地址</strong></p>
+<p data-start="1356" data-end="1466" class="">对于多网卡的设备（如同时拥有有线网卡和无线网卡的设备），用户需要为每个网卡设置唯一的IP地址。这可以确保V2Ray能够准确地识别并使用指定网卡的网络连接。在某些复杂的网络环境下，手动配置IP地址还可以帮助提高网络稳定性。</p>
+</li>
+<li data-start="1468" data-end="1585" class="" style="">
+<p data-start="1471" data-end="1482" class=""><strong data-start="1471" data-end="1482">安装V2Ray</strong></p>
+<p data-start="1487" data-end="1585" class="">从V2Ray的官方网站下载并安装最新版本的V2Ray客户端。安装过程中，用户需要确保选择合适的操作系统版本，并按照安装向导的提示完成所有步骤。安装完成后，用户可以进入V2Ray的配置界面进行设置。</p>
+</li>
+<li data-start="1587" data-end="1819" class="" style="">
+<p data-start="1590" data-end="1605" class=""><strong data-start="1590" data-end="1605">修改V2Ray配置文件</strong></p>
+<p data-start="1610" data-end="1710" class="">在V2Ray的配置文件中，用户需要设置主要的入站（inbound）和出站（outbound）设置。入站设置决定了V2Ray如何接收来自网络的请求，出站设置则决定了V2Ray如何将请求转发到目标服务器。</p>
+<p data-start="1715" data-end="1819" class="">用户可以根据需要选择不同的代理协议（如VMess、Shadowsocks、Trojan等），并调整配置文件中的参数以满足个性化需求。配置文件的修改需要一定的网络知识，因此建议新手用户在修改配置文件时谨慎操作。</p>
+</li>
+<li data-start="1821" data-end="1907" class="" style="">
+<p data-start="1824" data-end="1835" class=""><strong data-start="1824" data-end="1835">启动V2Ray</strong></p>
+<p data-start="1840" data-end="1907" class="">配置完成后，启动V2Ray客户端，确保软件与网卡之间的正常通信。此时，V2Ray将开始监听并转发网络请求，通过选定的网卡进行数据传输。</p>
+</li>
+<li data-start="1909" data-end="2003" class="" style="">
+<p data-start="1912" data-end="1921" class=""><strong data-start="1912" data-end="1921">测试连通性</strong></p>
+<p data-start="1926" data-end="2003" class="">使用命令行工具（如ping）测试网络的连通性，确认V2Ray是否正常工作。通过测试，用户可以验证网络配置是否正确，确保数据能够通过V2Ray代理顺利传输。</p>
+</li>
+</ol>
+<h3 data-start="2005" data-end="2013" class="">注意事项</h3>
+<ul data-start="2015" data-end="2227">
+<li data-start="2015" data-end="2064" class="" style="">
+<p data-start="2017" data-end="2064" class=""><strong data-start="2017" data-end="2031">保持系统与驱动的更新</strong>：定期检查操作系统和网卡驱动的更新，确保网络连接的稳定性和安全性。</p>
+</li>
+<li data-start="2065" data-end="2132" class="" style="">
+<p data-start="2067" data-end="2132" class=""><strong data-start="2067" data-end="2083">定期检查V2Ray的配置</strong>：V2Ray的配置文件需要根据网络环境的变化进行适时调整。定期检查配置文件，优化网络性能和安全性。</p>
+</li>
+<li data-start="2133" data-end="2227" class="" style="">
+<p data-start="2135" data-end="2227" class=""><strong data-start="2135" data-end="2149">调整网卡的QoS设置</strong>：在多个应用同时使用网络时，可能会出现带宽占用过多的情况。通过调整网卡的QoS（服务质量）设置，用户可以确保V2Ray的网络连接优先级，从而提高网络稳定性。</p>
+</li>
+</ul>
+<h2 data-start="2229" data-end="2243" class="">V2Ray常见问题解答</h2>
+<h3 data-start="2245" data-end="2265" class="">使用V2Ray需要什么硬件要求？</h3>
+<p data-start="2267" data-end="2366" class="">V2Ray对硬件的要求并不高，大多数普通的计算机或Linux服务器都可以支持V2Ray的运行。唯一需要注意的是，网卡的性能应该满足所需的网络带宽和数据包处理能力，否则可能会影响V2Ray的代理效果。</p>
+<h3 data-start="2368" data-end="2390" class="">如何检查我的V2Ray配置是否正确？</h3>
+<p data-start="2392" data-end="2474" class="">用户可以通过查看V2Ray的日志文件，检查是否有错误提示并进行排查。另外，使用浏览器访问被墙网站，若能够顺利访问且没有出现速度延迟等问题，则说明V2Ray配置正确。</p>
+<h3 data-start="2476" data-end="2503" class="">V2Ray与其他代理工具相比有什么优势与劣势？</h3>
+<p data-start="2505" data-end="2623" class="">V2Ray的优势在于其多协议支持、灵活的配置选项和强大的网络穿透能力。相比于传统的代理工具，V2Ray具有更高的安全性和自定义性，能够应对更加复杂的网络环境。然而，V2Ray的学习曲线较陡，初学者可能需要花费较长时间来熟悉其配置和使用。</p>
+<h3 data-start="2625" data-end="2642" class="">V2Ray的更新频率如何？</h3>
+<p data-start="2644" data-end="2722" class="">V2Ray项目拥有活跃的开发团队，定期发布新版本以修复漏洞、优化功能并添加新特性。用户可以通过官方网站或GitHub查看最新的更新日志，保持软件的最新版本。</p>
+<h3 data-start="2724" data-end="2747" class="">如何优化网卡性能以提高V2Ray效果？</h3>
+<ul data-start="2749" data-end="2944">
+<li data-start="2749" data-end="2791" class="" style="">
+<p data-start="2751" data-end="2791" class=""><strong data-start="2751" data-end="2763">禁用不必要的网卡</strong>：在多网卡系统中，禁用不常用的网卡可以提升主网卡的性能。</p>
+</li>
+<li data-start="2792" data-end="2843" class="" style="">
+<p data-start="2794" data-end="2843" class=""><strong data-start="2794" data-end="2805">调整MTU设置</strong>：合理设置网卡的MTU（最大传输单元）值，能够提高数据包的传输速度和可靠性。</p>
+</li>
+<li data-start="2844" data-end="2892" class="" style="">
+<p data-start="2846" data-end="2892" class=""><strong data-start="2846" data-end="2858">监控吞吐量与流量</strong>：使用监控工具查看网卡的吞吐量和流量，识别可能存在的瓶颈并进行优化。</p>
+</li>
+<li data-start="2893" data-end="2944" class="" style="">
+<p data-start="2895" data-end="2944" class=""><strong data-start="2895" data-end="2904">优化路由表</strong>：确保路由表简洁有效，不良的路由设置可能导致网络延迟，影响V2Ray的使用体验。</p>
+</li>
+</ul>
+<h2 data-start="2946" data-end="2951" class="">总结</h2>
+<p data-start="2953" data-end="3085" class="">通过合理配置网卡和V2Ray，用户可以实现更高效、更安全的网络连接。在实际应用中，优化网卡性能、正确设置V2Ray的代理配置，并定期检查系统与驱动的更新，都是提升网络性能和代理效果的关键。掌握这些配置技巧，能够帮助用户充分发挥V2Ray的优势，实现最佳的网络体验。</p>
+<hr data-start="3087" data-end="3090" class="" style="">
+<p data-start="3092" data-end="3100" class=""><strong data-start="3092" data-end="3100">精彩点评</strong></p>
+<p data-start="3102" data-end="3277" class="">本文对网卡与V2Ray的结合使用进行了详细的阐述，从基础的网卡配置到V2Ray的高级应用，内容全面且深入。文章不仅介绍了具体的操作步骤，还提供了有价值的优化建议，帮助用户解决可能遇到的各种问题。语言简洁明了，逻辑清晰，适合技术小白与有一定网络基础的用户阅读。通过这篇文章，读者能够深入理解V2Ray与网卡之间的关系，并能够有效提升自身的网络使用体验。</p>                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-113989.htm">标语点亮网络自由之光：科学上网的理念传播与现实意义全解读</a></p>
+                                        <p>下一个：<a href="/news/article-114598.htm">Clash软件下载与安装详尽指南：助力科学上网与网络优化</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-112756.htm" title="探寻网络自由的钥匙：v2ray免费节点获取与使用全攻略">探寻网络自由的钥匙：v2ray免费节点获取与使用全攻略</a></li>
+                        <li class="py-2"><a href="/news/article-113681.htm" title="全面指南：如何高效使用海星云实现科学上网">全面指南：如何高效使用海星云实现科学上网</a></li>
+                        <li class="py-2"><a href="/news/article-99455.htm" title="在 K2 路由器上安装和配置 V2Ray 的完整指南">在 K2 路由器上安装和配置 V2Ray 的完整指南</a></li>
+                        <li class="py-2"><a href="/news/article-93506.htm" title="v2rayNG端口设置与优化全攻略：打造稳定高速的网络连接">v2rayNG端口设置与优化全攻略：打造稳定高速的网络连接</a></li>
+                        <li class="py-2"><a href="/news/article-109868.htm" title="如何通过V2Ray与手机热点增强网络安全与稳定性">如何通过V2Ray与手机热点增强网络安全与稳定性</a></li>
+                        <li class="py-2"><a href="/news/article-91047.htm" title="哈趣Clash全指南：从安装到配置的科学上网终极教程">哈趣Clash全指南：从安装到配置的科学上网终极教程</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-high-speed-nodes.htm" title="V2ray IOS | 4月3日20.5M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点分享">V2ray IOS | 4月3日20.5M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-88320.htm" title="科学上网小火箭使用全攻略：实现快速、稳定、安全的网络访问">科学上网小火箭使用全攻略：实现快速、稳定、安全的网络访问</a></li>
+                        <li class="py-2"><a href="/news/article-95788.htm" title="如何科学上网顺利访问Google Play：全面指南">如何科学上网顺利访问Google Play：全面指南</a></li>
+                        <li class="py-2"><a href="/news/article-112074.htm" title="如何关闭Shadowrocket设置：详细步骤与注意事项">如何关闭Shadowrocket设置：详细步骤与注意事项</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                V2ray IOS 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
