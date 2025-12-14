@@ -368,29 +368,14 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序功能如何使用？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。用户无需手动切换即可保持高速访问，优化网页、视频和游戏体验，提高网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 支持 Trojan 吗？</h5></div>
     <div class="panel-body">
         支持。Nekoray 基于 sing-box 核心，能兼容 Trojan、Vmess、Vless、Hysteria2 等多种协议。用户可在同一界面中管理和切换不同类型节点，非常方便。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的流量分流规则支持哪些条件？</h5></div>
-    <div class="panel-body">
-        V2Ray 支持按域名、IP、端口、协议或用户标签进行分流。用户可灵活设置国内直连、国外代理或特定节点，实现精准控制和网络优化。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何优化视频播放？</h5></div>
-    <div class="panel-body">
-        通过分流规则，将流媒体域名匹配到高速节点，而其他流量走备用节点。保证视频播放流畅，同时节约带宽资源，提升整体网络速度和体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 支持规则分流功能吗？</h5></div>
-    <div class="panel-body">
-        支持。Surfboard 可通过规则文件和策略组将不同类型流量分配到指定节点。保证网页浏览、视频和游戏走最优线路，提高访问速度和整体网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 协议的动态端口功能是什么？</h5></div>
-    <div class="panel-body">
-        VMess 支持动态端口（port hopping）功能，能在一定范围内自动变更通信端口。此机制可有效防止防火墙基于端口的封锁策略，提高节点长期稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 的配置文件可以与 Clash 通用吗？</h5></div>
@@ -398,19 +383,34 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
         Surfboard 基于 Clash 核心，因此支持大部分 YAML 配置文件，但部分字段如 rule-provider、external-controller 等可能不兼容。建议使用订阅转换工具将 Clash 文件转换为 Surfboard 兼容格式导入。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的 PAC 模式如何应用？</h5></div>
-    <div class="panel-body">
-        PAC 模式根据规则自动判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站环境，提高网络访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 能否使用订阅链接？</h5></div>
     <div class="panel-body">
         Nekobox 支持通过订阅 URL 导入节点。用户在应用中选择“添加订阅”，输入链接后系统会自动更新节点数据，并支持定期刷新，确保始终使用最新线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序功能如何使用？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 支持规则分流功能吗？</h5></div>
     <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。用户无需手动切换即可保持高速访问，优化网页、视频和游戏体验，提高网络稳定性。<hr />    </div>
+        支持。Surfboard 可通过规则文件和策略组将不同类型流量分配到指定节点。保证网页浏览、视频和游戏走最优线路，提高访问速度和整体网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的流量分流规则支持哪些条件？</h5></div>
+    <div class="panel-body">
+        V2Ray 支持按域名、IP、端口、协议或用户标签进行分流。用户可灵活设置国内直连、国外代理或特定节点，实现精准控制和网络优化。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的 PAC 模式如何应用？</h5></div>
+    <div class="panel-body">
+        PAC 模式根据规则自动判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站环境，提高网络访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何优化视频播放？</h5></div>
+    <div class="panel-body">
+        通过分流规则，将流媒体域名匹配到高速节点，而其他流量走备用节点。保证视频播放流畅，同时节约带宽资源，提升整体网络速度和体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 协议的动态端口功能是什么？</h5></div>
+    <div class="panel-body">
+        VMess 支持动态端口（port hopping）功能，能在一定范围内自动变更通信端口。此机制可有效防止防火墙基于端口的封锁策略，提高节点长期稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 如何配置混淆以应对封锁升级？</h5></div>
@@ -444,16 +444,16 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-19-free-subscribe-node.htm" title="V2ray IOS | 11月19日20.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点分享">V2ray IOS | 11月19日20.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-14-clash-windows.htm" title="V2ray IOS | 11月14日19.2M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点订阅节点分享">V2ray IOS | 11月14日19.2M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-30-node-share.htm" title="V2ray IOS | 11月30日19.3M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点分享">V2ray IOS | 11月30日19.3M/S|免费Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-20-node-share.htm" title="V2ray IOS | 11月20日22.2M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点订阅节点分享">V2ray IOS | 11月20日22.2M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-node-subscribe-links.htm" title="V2ray IOS | 11月12日18.5M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享">V2ray IOS | 11月12日18.5M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-9-free-shadowrocket-node.htm" title="V2ray IOS | 12月9日19.7M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点分享">V2ray IOS | 12月9日19.7M/S|免费SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-ssr-subscribe.htm" title="V2ray IOS | 11月8日20.3M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点订阅节点分享">V2ray IOS | 11月8日20.3M/S|免费Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-14-free-shadowrocket-node.htm" title="V2ray IOS | 12月14日21M/S|免费Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点订阅节点分享">V2ray IOS | 12月14日21M/S|免费Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点订阅节点分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-12-4-node-share-links.htm" title="V2ray IOS | 12月4日20M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点订阅节点分享">V2ray IOS | 12月4日20M/S|免费Shadowrocket节点/V2ray节点/Clash节点/Singbox节点/SSR节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-node-subscribe-links.htm" title="V2ray IOS | 11月6日19.5M/S|免费SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点订阅节点分享">V2ray IOS | 11月6日19.5M/S|免费SSR节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-2-node-share-links.htm" title="V2ray IOS | 12月2日20M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享">V2ray IOS | 12月2日20M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-27-clash-node-daily-updates.htm" title="V2ray IOS | 11月27日21.1M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点订阅节点分享">V2ray IOS | 11月27日21.1M/S|免费SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点订阅节点分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-29-free-v2ray-subscribe.htm" title="V2ray IOS | 11月29日18.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅节点分享">V2ray IOS | 11月29日18.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-21-free-node-subscribe.htm" title="V2ray IOS | 11月21日20M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点订阅节点分享">V2ray IOS | 11月21日20M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/Clash节点/SSR节点订阅节点分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-10-free-shadowrocket-node.htm" title="V2ray IOS | 11月10日21.8M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点订阅节点分享">V2ray IOS | 11月10日21.8M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-clash-windows.htm" title="V2ray IOS | 11月14日19.2M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点订阅节点分享">V2ray IOS | 11月14日19.2M/S|免费Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-free-shadowrocket-node.htm" title="V2ray IOS | 11月23日22.1M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Singbox节点订阅节点分享">V2ray IOS | 11月23日22.1M/S|免费Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Singbox节点订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-17-free-ssr-subscribe.htm" title="V2ray IOS | 11月17日20.3M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享">V2ray IOS | 11月17日20.3M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点订阅节点分享</a></li>
                     </ul>
     </div>
 </div>
@@ -465,7 +465,7 @@ Clash Meta 是基于 Clash 核心的一个增强版，支持更多现代协议�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
